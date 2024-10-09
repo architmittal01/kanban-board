@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Header styling */
+.header {
+  color: black; /* Text color */
+  padding: 15px; /* Padding for spacing */
+  text-align: center; /* Center align text */
+  font-size: 24px; /* Font size for the header */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 20px; /* Space below the header */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background-color: #ffffff; /* Background color */
+  border: 1px solid #ccc; /* Light border */
+  transition: transform 0.2s; /* Transition for hover effect */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Hover effect for the header */
+.header:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Kanban board styling */
+.kanban-board {
+  display: flex; /* Use flexbox to layout columns */
+  justify-content: space-between; /* Distribute columns evenly */
+  padding: 20px;
+  gap: 20px; /* Add space between columns */
+}
+
+/* Kanban column styling */
+.kanban-column {
+  background-color: #ffffff; /* White background for columns */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 8px;
+  width: 30%; /* Width of each column */
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  overflow: auto; /* Enable scrolling if content overflows */
+}
+
+/* Column title styling */
+.column-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Kanban card styling */
+.kanban-card {
+  position: relative; /* Enables positioning of child elements */
+  background-color: #ffffff; /* Card background color */
+  border: 1px solid #ccc; /* Light border around card */
+  padding: 15px;
+  padding-right: 60px; /* Add right padding to avoid text overflowing over the image */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px; /* Space between cards */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Profile picture in the top-right corner */
+.profile-picture-top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1; /* Ensures the image is on top of other content */
+}
+
+/* Card content layout */
+.card-number {
+  font-size: 14px;
+  color: #999;
+  margin-right: 10px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Button styling */
+.button {
+  background-color: #4a90e2;
   color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {
+  background-color: #357ab8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column; /* Stack columns vertically */
   }
-  to {
-    transform: rotate(360deg);
+
+  .kanban-column {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px; /* Space between columns */
   }
 }
